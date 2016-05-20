@@ -1,0 +1,140 @@
+package com.example.nikhil.hosphonew.DoctorFiles;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.view.View;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.example.nikhil.hosphonew.CommonFiles.AppointmentActivity;
+import com.example.nikhil.hosphonew.CommonFiles.PrescriptionActivity;
+import com.example.nikhil.hosphonew.CommonFiles.ReportActivity;
+import com.example.nikhil.hosphonew.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DoctorSearchHospitalActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
+
+    List<String> listItems;
+    ListView list;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_doctor_search_hospital);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        listItems= new ArrayList<String>();
+
+        listItems.add("Hospital");
+        listItems.add("Hospital");
+        listItems.add("Hospital");
+        listItems.add("Hospital");
+        listItems.add("Hospital");
+        listItems.add("Hospital");
+        listItems.add("Hospital");
+        listItems.add("Hospital");
+
+        list= (ListView)findViewById(R.id.listViewDoctorHospitalSearch);
+        add();
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(DoctorSearchHospitalActivity.this,DoctorSearchPatientActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void add() {
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_dropdown_item_1line,listItems);
+        list.setAdapter(adapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.doctor_search_hospital, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        switch(id){
+
+            case R.id.nav_doctor_report:
+                Intent iReport = new Intent(DoctorSearchHospitalActivity.this, ReportActivity.class);
+                startActivity(iReport);
+                break;
+
+            case  R.id.nav_doctor_prescription:
+                Intent iTest = new Intent(DoctorSearchHospitalActivity.this, PrescriptionActivity.class);
+                startActivity(iTest);
+                break;
+
+            case  R.id.nav_doctor_appointment:
+                Intent iPrescription = new Intent(DoctorSearchHospitalActivity.this, AppointmentActivity.class);
+                startActivity(iPrescription);
+                break;
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+}

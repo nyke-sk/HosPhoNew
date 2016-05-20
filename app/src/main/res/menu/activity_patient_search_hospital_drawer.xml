@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_patient_report"
+            android:title="Reports" />
+        <item
+            android:id="@+id/nav_patient_prescription"
+            android:title="Prescription" />
+        <item
+            android:id="@+id/nav_patient_appointment"
+            android:title="Appointments" />
+    </group>
+
+</menu>

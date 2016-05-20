@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">HosPho</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_doctor_hospital_search">Hospital Search</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_doctor_main">DoctorMainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_doctor_search_patient">Patient Search</string>
+    <string name="title_activity_doctor_search_hospital">Hospital Search</string>
+    <string name="title_activity_selector_for_doctor">Selection</string>
+    <string name="title_activity_report">Reports</string>
+    <string name="title_activity_prescription">Prescriptions</string>
+    <string name="title_activity_patient_search_hospital">Hospital Search</string>
+    <string name="title_activity_patient_search_doctor">Doctor Search</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="nav_report">Reports</string>
+    <string name="nav_prescription">Prescription</string>
+    <string name="nav_appointment">Appointments</string>
+    <string name="title_activity_appointment">AppointmentActivity</string>
+    <string name="signed_in_fmt">you are Signed In %s</string>
+    <string name="loading">loading..</string>
+    <string name="signed_out">Signed out</string>
+    <string name="sign_out">Sign out</string>
+    <string name="disconnect">disconnect</string>
+</resources>
