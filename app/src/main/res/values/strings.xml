@@ -38,4 +38,5 @@
     <string name="signed_out">Signed out</string>
     <string name="sign_out">Sign out</string>
     <string name="disconnect">disconnect</string>
+    <string name="title_activity_select_image">SelectImageActivity</string>
 </resources>

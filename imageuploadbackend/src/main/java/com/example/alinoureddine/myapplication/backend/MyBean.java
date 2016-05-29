@@ -1,8 +1,8 @@
-package com.example.Nikhil.myapplication.googlebackend;
+package com.example.alinoureddine.myapplication.backend;
 
-
-
-/** The object model for the data we are sending through endpoints */
+/**
+ * The object model for the data we are sending through endpoints
+ */
 public class MyBean {
 
     private String myData;
